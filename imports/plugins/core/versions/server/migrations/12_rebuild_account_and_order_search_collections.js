@@ -4,7 +4,8 @@ import { buildOrderSearch,
   buildAccountSearch } from "/imports/plugins/included/search-mongo/server/methods/searchcollections";
 
 Migrations.add({
-  version: 1,
+  // Migrations 10 and 11 introduced changes on Orders, so we need to rebuild the search collections
+  version: 12,
   up: function () {
     OrderSearch.remove({});
     AccountSearch.remove();
